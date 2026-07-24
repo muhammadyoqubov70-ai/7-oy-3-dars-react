@@ -49,3 +49,9 @@ body {
 .page {
   padding: 40px;
 }
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
