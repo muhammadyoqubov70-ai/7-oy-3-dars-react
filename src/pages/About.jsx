@@ -1,8 +1,8 @@
 export default function About() {
   return (
     <div className="page">
-      <h1>Biz haqimizda</h1>
-      <p>Bu sahifa loyiha haqida ma'lumot beradi.</p>
+      <h1>About Us</h1>
+      <p>This page provides information about the project.</p>
     </div>
   );
 }
