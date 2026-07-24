@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import WelcomeScreen from "./components/WelcomeScreen";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/feature/:id" element={<FeatureDetail />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ThemeProvider>
   );

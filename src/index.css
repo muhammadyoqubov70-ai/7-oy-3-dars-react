@@ -389,3 +389,43 @@ body {
   position: relative;
   z-index: 1;
 }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  margin-top: 40px;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-socials a {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.footer-socials a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 500px) {
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
