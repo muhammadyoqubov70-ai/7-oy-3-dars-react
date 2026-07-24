@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
 import { Palette, Zap, Shield, CheckCircle } from "lucide-react";
+import { features } from "../data/features";
+
+const icons = { Palette, Zap, Shield };
 
 export default function Home() {
   return (
     <div>
       <section className="hero">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+        <div className="blob blob-3"></div>
         <div className="hero-content">
           <h1>React App with Dark & Light Mode</h1>
           <p>A modern, fast, and adaptive interface built with Context API.</p>
@@ -19,21 +26,17 @@ export default function Home() {
       </section>
 
       <section className="cards">
-        <div className="card">
-          <Palette size={32} className="card-icon" />
-          <h3>Adaptive Design</h3>
-          <p>Instantly adapts to any color scheme using CSS variables.</p>
-        </div>
-        <div className="card">
-          <Zap size={32} className="card-icon" />
-          <h3>Fast Performance</h3>
-          <p>Only CSS variables switch, no page reload required.</p>
-        </div>
-        <div className="card">
-          <Shield size={32} className="card-icon" />
-          <h3>Reliable Storage</h3>
-          <p>Your chosen theme is saved in localStorage.</p>
-        </div>
+        {features.map((feature) => {
+          const Icon = icons[feature.icon];
+          return (
+            <Link to={`/feature/${feature.id}`} key={feature.id} className="card">
+              <Icon size={32} className="card-icon" />
+              <h3>{feature.title}</h3>
+              <p>{feature.short}</p>
+              <span className="card-link">Learn more →</span>
+            </Link>
+          );
+        })}
       </section>
 
       <section className="choose-us">

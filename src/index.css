@@ -200,3 +200,192 @@ body {
   font-weight: bold;
   color: var(--text-color);
 }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 220px;
+  height: 220px;
+  background: #ffffff;
+  top: -60px;
+  left: -60px;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  width: 160px;
+  height: 160px;
+  background: #ffd166;
+  bottom: -40px;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.blob-3 {
+  width: 120px;
+  height: 120px;
+  background: #06d6a0;
+  top: 20%;
+  right: 5%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-25px) scale(1.08); }
+}
+
+.hero-content, .hero-image {
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card-link {
+  margin-top: 12px;
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.detail-page {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.detail-icon {
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.welcome-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #0a1128 0%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  color: white;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+.welcome-screen.closing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(2px 2px at 140px 80px, white, transparent),
+    radial-gradient(1px 1px at 90px 40px, white, transparent),
+    radial-gradient(1px 1px at 200px 150px, white, transparent),
+    radial-gradient(2px 2px at 300px 60px, white, transparent),
+    radial-gradient(1px 1px at 250px 200px, white, transparent),
+    radial-gradient(2px 2px at 50px 200px, white, transparent),
+    radial-gradient(1px 1px at 350px 100px, white, transparent);
+  background-repeat: repeat;
+  background-size: 400px 300px;
+  opacity: 0.6;
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.4; }
+  to { opacity: 0.9; }
+}
+
+.welcome-earth {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 24px;
+  animation: spin 20s linear infinite;
+  filter: drop-shadow(0 0 30px rgba(56, 178, 172, 0.4));
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.welcome-screen h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+.welcome-screen p {
+  opacity: 0.7;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.enter-btn {
+  padding: 12px 36px;
+  border: 2px solid #38a169;
+  border-radius: 30px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.enter-btn:hover {
+  background: #38a169;
+  transform: scale(1.05);
+}
+
+.welcome-atom {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 24px;
+  animation: spin 6s linear infinite;
+  filter: drop-shadow(0 0 25px rgba(97, 218, 251, 0.5));
+  position: relative;
+  z-index: 1;
+}
